@@ -1,0 +1,47 @@
+[
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\Building_Escape.Build.cs",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\Building_Escape.cpp",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\Building_Escape.h",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\Building_EscapeGameModeBase.cpp",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\Building_EscapeGameModeBase.h",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\OpenDoor.cpp",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\OpenDoor.h",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\WorldPosition.cpp",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	},
+	{
+		"file": "E:\\\\GamesDevelopement\\\\UE_Udemy_Remastred\\\\04_Building_Escape_UE_5\\\\Building_Escape_UE_5\\\\Source\\\\Building_Escape\\\\WorldPosition.h",
+		"command": "cl.exe @\"E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape\\Building_Escape.196.rsp\"",
+		"directory": "E:\\Program Files (x86)\\Ep\\UE_5.0EA\\Engine\\Source"
+	}
+]
