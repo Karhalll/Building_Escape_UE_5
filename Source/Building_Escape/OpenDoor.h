@@ -27,8 +27,17 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
+    void RotateDoor(float TargetYaw, float DeltaTime) const;
+
+private:
+
     UPROPERTY(EditAnywhere)
-    float TargetYaw = -90.f;
+    float OpenYaw = -90.f;
+    float CloseYaw;
+
     UPROPERTY(EditAnywhere)
     ATriggerBase* PressurePlate;
+
+    UPROPERTY(EditAnywhere)
+    AActor* ActorThatOpens;
 };
