@@ -2,11 +2,10 @@
     "configurations": [
         {
             "name": "Building_EscapeEditor Editor Win64 Development (Building_Escape)",
-            "intelliSenseMode": "windows-msvc-x64",
+            "intelliSenseMode": "msvc-x64",
             "compileCommands": "E:\\GamesDevelopement\\UE_Udemy_Remastred\\04_Building_Escape_UE_5\\Building_Escape_UE_5\\.vscode\\compileCommands_Building_Escape.json",
             "cStandard": "c17",
-            "cppStandard": "c++17",
-            "compilerPath": "E:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe"
+            "cppStandard": "c++17"
         }
     ],
     "version": 4
