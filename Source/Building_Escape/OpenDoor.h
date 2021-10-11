@@ -33,6 +33,7 @@ private:
 
     UPROPERTY(EditAnywhere)
     float OpenYaw = -90.f;
+
     float CloseYaw;
 
     UPROPERTY(EditAnywhere)
@@ -40,4 +41,12 @@ private:
 
     UPROPERTY(EditAnywhere)
     AActor* ActorThatOpens;
+
+    float DoorLastOpened = 0.f;
+
+    UPROPERTY(EditAnywhere)
+    float DoorCloseDelay = 2.f;
+
+    UPROPERTY(EditAnywhere)
+    float DoorMovingSpeed = 1.f;
 };
