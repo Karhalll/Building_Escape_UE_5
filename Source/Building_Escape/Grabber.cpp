@@ -1,9 +1,10 @@
 // Copyright Martin Fucik 2021
 
+#include "Grabber.h"
+
 #include "DrawDebugHelpers.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
-#include "Grabber.h"
 
 #define OUT
 
@@ -15,6 +16,26 @@ UGrabber::UGrabber()
 void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
+
+    PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+    if (PhysicsHandle)
+    {
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("%s has a Grabber component but no PhysicsHandle attached to it!"), *GetOwner()->GetName());
+    }
+
+    InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+    if (InputComponent)
+    {
+        InputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+    }
+}
+
+void UGrabber::Grab()
+{
+    UE_LOG(LogTemp, Warning, TEXT("Grab presed!"));
 }
 
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -28,14 +49,8 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
         OUT PlayerViewPointRotation
     );
 
-    // UE_LOG(LogTemp, Warning, 
-    //     TEXT("Player View Location: %s, Rotation %s."), 
-    //     *PlayerViewPointLocation.ToString(), 
-    //     *PlayerViewPointRotation.ToString()
-    // );
-
     FVector LineTraceEnd = PlayerViewPointLocation + PlayerViewPointRotation.Vector() * Reach;
-
+    
     DrawDebugLine(
         GetWorld(),
         PlayerViewPointLocation,
@@ -46,4 +61,23 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
         0.f,
         5.f
     );
+
+    FHitResult Hit;
+    FCollisionQueryParams TraceParams(
+        FName(TEXT("")),
+        false,
+        GetOwner()
+    );
+    GetWorld()->LineTraceSingleByObjectType(
+        OUT Hit,
+        PlayerViewPointLocation,
+        LineTraceEnd,
+        FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody),
+        TraceParams
+    );
+
+    if (Hit.GetActor())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("PPPlayer aiming at: %s."), *Hit.GetActor()->GetName());
+    }
 }
