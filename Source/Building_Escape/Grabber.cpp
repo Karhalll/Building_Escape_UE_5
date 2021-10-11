@@ -78,6 +78,6 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 
     if (Hit.GetActor())
     {
-        UE_LOG(LogTemp, Warning, TEXT("PPPlayer aiming at: %s."), *Hit.GetActor()->GetName());
+        // UE_LOG(LogTemp, Warning, TEXT("Player aiming at: %s."), *Hit.GetActor()->GetName());
     }
 }
