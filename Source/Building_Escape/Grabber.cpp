@@ -17,6 +17,12 @@ void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
 
+    FindPhysicsHandle();
+    SetupInputComponent();
+}
+
+void UGrabber::FindPhysicsHandle()
+{
     PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
     if (PhysicsHandle)
     {
@@ -25,7 +31,10 @@ void UGrabber::BeginPlay()
     {
         UE_LOG(LogTemp, Error, TEXT("%s has a Grabber component but no PhysicsHandle attached to it!"), *GetOwner()->GetName());
     }
+}
 
+void UGrabber::SetupInputComponent()
+{
     InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
     if (InputComponent)
     {
@@ -37,6 +46,7 @@ void UGrabber::BeginPlay()
 void UGrabber::Grab()
 {
     UE_LOG(LogTemp, Warning, TEXT("Grab pressed!"));
+    GetFirstPhysicsBodyInReach();
 }
 
 void UGrabber::Release()
@@ -46,8 +56,11 @@ void UGrabber::Release()
 
 void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction); 
+}
 
+FHitResult UGrabber::GetFirstPhysicsBodyInReach() const
+{
     FVector PlayerViewPointLocation;
     FRotator PlayerViewPointRotation;
     GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(
@@ -56,17 +69,6 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
     );
 
     FVector LineTraceEnd = PlayerViewPointLocation + PlayerViewPointRotation.Vector() * Reach;
-    
-    DrawDebugLine(
-        GetWorld(),
-        PlayerViewPointLocation,
-        LineTraceEnd,
-        FColor(0, 255, 0),
-        false,
-        0.f,
-        0.f,
-        5.f
-    );
 
     FHitResult Hit;
     FCollisionQueryParams TraceParams(
@@ -74,6 +76,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
         false,
         GetOwner()
     );
+
     GetWorld()->LineTraceSingleByObjectType(
         OUT Hit,
         PlayerViewPointLocation,
@@ -84,6 +87,8 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 
     if (Hit.GetActor())
     {
-        // UE_LOG(LogTemp, Warning, TEXT("Player aiming at: %s."), *Hit.GetActor()->GetName());
+        UE_LOG(LogTemp, Warning, TEXT("Player aiming at: %s."), *Hit.GetActor()->GetName());
     }
+
+    return Hit;
 }

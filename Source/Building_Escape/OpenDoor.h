@@ -8,28 +8,22 @@
 
 #include "OpenDoor.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BUILDING_ESCAPE_API UOpenDoor : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
-
 	UOpenDoor();
-
-protected:
-
-	virtual void BeginPlay() override;
-
-public:	
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-private:
-    void RotateDoor(float TargetYaw, float MoveSpeed, float DeltaTime) const;
+protected:
+	virtual void BeginPlay() override;
+
 
 private:
+    void RotateDoor(float TargetYaw, float MoveSpeed, float DeltaTime) const;
 
     UPROPERTY(EditAnywhere)
     float OpenYaw = -90.f;
