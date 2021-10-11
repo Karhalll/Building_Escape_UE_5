@@ -27,7 +27,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-    void RotateDoor(float TargetYaw, float DeltaTime) const;
+    void RotateDoor(float TargetYaw, float MoveSpeed, float DeltaTime) const;
 
 private:
 
@@ -48,5 +48,8 @@ private:
     float DoorCloseDelay = 2.f;
 
     UPROPERTY(EditAnywhere)
-    float DoorMovingSpeed = 1.f;
+    float DoorOpenSpeed = 1.f;
+
+    UPROPERTY(EditAnywhere)
+    float DoorCloseSpeed = 1.f;
 };
