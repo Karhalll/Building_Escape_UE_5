@@ -18,12 +18,17 @@ public:
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+    float TotalMassOfActors() const;
+
 protected:
 	virtual void BeginPlay() override;
 
 
 private:
     void RotateDoor(float TargetYaw, float MoveSpeed, float DeltaTime) const;
+
+    UPROPERTY(EditAnywhere)
+    float MassToOpenDoor = 50.f;
 
     UPROPERTY(EditAnywhere)
     float OpenYaw = -90.f;
