@@ -1,7 +1,8 @@
 // Copyright Martin Fucik 2021
 
-#include "OpenDoor.h"
 #include "GameFramework/Actor.h"
+
+#include "OpenDoor.h"
 
 UOpenDoor::UOpenDoor()
 {
