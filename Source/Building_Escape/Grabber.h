@@ -31,5 +31,9 @@ private:
     void SetupInputComponent();
     void Grab();
     void Release();
+
     FHitResult GetFirstPhysicsBodyInReach() const;
+
+    FVector GetPlayersReach() const;
+    FVector GetPlayersWorldPos() const;
 };
